@@ -1,0 +1,21 @@
+#entryField{
+  border: red groove 3px;
+  border-left: none;
+  border-right: none;
+}
+
+#buttonke{
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+#lijstke{
+  position: relative;
+  padding-left: 1vw;
+  left: 5vw;
+  top: 5vh;
+  border: red groove 2px;
+  border-top: none;
+  border-bottom: none;
+}
