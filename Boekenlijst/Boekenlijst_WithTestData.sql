@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.4
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 14 mrt 2017 om 12:55
--- Serverversie: 5.7.14
--- PHP-versie: 5.6.25
+-- Gegenereerd op: 18 mrt 2017 om 18:51
+-- Serverversie: 10.1.21-MariaDB
+-- PHP-versie: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -55,6 +55,14 @@ CREATE TABLE `boek` (
   `vertaling_id` int(11) NOT NULL,
   `uitgeverij_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `boek`
+--
+
+INSERT INTO `boek` (`boek_id`, `isbnNummer`, `auteur_id`, `vertaling_id`, `uitgeverij_id`) VALUES
+(9, 6666, 1, 1, 5),
+(10, 74666, 1, 2, 6);
 
 -- --------------------------------------------------------
 
@@ -108,6 +116,14 @@ CREATE TABLE `vertaling` (
   `boekTitel` varchar(234) NOT NULL,
   `paginas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `vertaling`
+--
+
+INSERT INTO `vertaling` (`vertaling_id`, `taal_id`, `boekTitel`, `paginas`) VALUES
+(1, 1, 'Honderd Apen', 1222),
+(2, 1, 'Mythologie: Armenie', 552);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -165,12 +181,12 @@ ALTER TABLE `auteur`
 -- AUTO_INCREMENT voor een tabel `boek`
 --
 ALTER TABLE `boek`
-  MODIFY `boek_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `boek_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT voor een tabel `taal`
 --
 ALTER TABLE `taal`
-  MODIFY `taal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `taal_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT voor een tabel `uitgeverij`
 --
@@ -180,7 +196,7 @@ ALTER TABLE `uitgeverij`
 -- AUTO_INCREMENT voor een tabel `vertaling`
 --
 ALTER TABLE `vertaling`
-  MODIFY `vertaling_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `vertaling_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Beperkingen voor geëxporteerde tabellen
 --
