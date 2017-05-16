@@ -30,27 +30,33 @@
 <script>
 
 document.addEventListener("mousemove", coords);
-var $recordX = [];
-var $recordY = [];
+var recordX = [];
+var recordY = [];
 
   function coords(){
     var x = event.clientX;
     var y = event.clientY;
-    document.getElementById('circle').style.left = x + 'px';
-    document.getElementById('circle').style.top = y + 'px';
 
-    $recordX.push(x);
-    $recordY.push(y);
-    console.log($recordX+' '+$recordY)
+    recordX.push(x);
+    recordY.push(y);
+    console.log(recordX+' '+recordY)
   }
 
 document.addEventListener("click", showRecord);
+var i;
 
   function showRecord(){
-    for(var i = 0; i < $recordX.length; i++){
-      document.getElementById('circle').style.left = $recordX[i];
-      document.getElementById('circle').style.top = $recordY[i];
+    for(var i = 0; i < recordX.length; i++){
+        moveMouse(i);
     }
+  }
+
+  function moveMouse(i){
+    console.log(i);
+    setTimeout(function(){
+      document.getElementById('circle').style.left = recordX[i]+'px';
+      document.getElementById('circle').style.top = recordY[i]+'px';
+    }, 1000);
   }
 
 </script>
