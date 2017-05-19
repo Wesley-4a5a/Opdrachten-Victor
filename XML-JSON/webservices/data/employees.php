@@ -2,7 +2,7 @@
 
 $employees = array(
 	array("name"=>"Alika Conrad","company"=>"Eu Associates"),
-	array("name"=>"Nelle S. Moreno","company"=>"Vel Arcu Eu PC"),
+	array("name"=>"Nelle S. Moreno","company"=>"Vel Arcu Eu P"),
 	array("name"=>"Xantha I. Wynn","company"=>"Et Lacinia Ltd"),
 	array("name"=>"Adrienne Dawson","company"=>"Ridiculus Mus Proin Limited"),
 	array("name"=>"Roary V. Riggs","company"=>"Tincidunt LLC"),
