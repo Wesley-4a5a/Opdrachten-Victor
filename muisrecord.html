@@ -39,25 +39,32 @@ var recordY = [];
 
     recordX.push(x);
     recordY.push(y);
-    console.log(recordX+' '+recordY)
   }
 
 document.addEventListener("click", showRecord);
-var i;
+var i = 0;
 
   function showRecord(){
-    for(var i = 0; i < recordX.length; i++){
-        moveMouse(i);
+    document.removeEventListener("click", showRecord);
+    document.removeEventListener("mousemove", coords);
+    var mouseaap = setInterval(function(){
+    if(i == recordY.length){
+      clearInterval(mouseaap);
+      document.addEventListener("mousemove", coords);
+      document.addEventListener("click", showRecord);
+      recordX = [];
+      recordY = [];
+      i = 0;
     }
-  }
-
-  function moveMouse(i){
-    console.log(i);
-    setTimeout(function(){
+    else{
       document.getElementById('circle').style.left = recordX[i]+'px';
       document.getElementById('circle').style.top = recordY[i]+'px';
-    }, 1000);
+      i++;
+    }
+    }, 1);
   }
+
+
 
 </script>
   </body>
