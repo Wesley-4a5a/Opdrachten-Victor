@@ -1,0 +1,15 @@
+    #aleHetWerkruim {
+      border: 0.5vw groove black;
+      width: 80vw;
+      height: 80vh;
+    }
+
+    #canvas {
+      border-top: 0.2vw groove black;
+    }
+
+    #poulter {
+      position: relative;
+      width: 1vw;
+      height: 1vh;
+    }
