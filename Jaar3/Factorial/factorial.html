@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function factorial(fag) {
+            var aap = fag;
+            if (fag < 0) {
+                return 'No fag, Btw. Fun fact; Water is voor honden. Die factorial.html:27 hoort er niet bij. Vanwege contant gezeik van mijn buurman zal deze functie nu deprecaten.';
+            }
+            else if (fag == 0) {
+                return 1;
+            }
+            else if (fag == 'Poulter') {
+                return 'Liever kips leverworst dan gewone leverworst';
+            }
+            else //lelijk
+            {
+                for (fag -= 1; fag > 1; fag--) {
+                    var aap = aap * fag;
+                }
+                return aap;
+            }
+        }
+
+        console.log(factorial(5));
+    </script>
+</body>
+
+</html>

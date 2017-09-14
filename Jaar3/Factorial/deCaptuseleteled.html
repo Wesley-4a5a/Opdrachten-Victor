@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+
+  <form>
+  <div>
+    <label>Number 1:</label>
+    <input type="number" name="firstNumber">
+  </div>
+  <div>
+    <label>Number 2:</label>
+    <input type="number" name="secondNumber">
+  </div>
+  <div>
+    <button type="button" id="multiply">Multiply</button>
+  </div>
+  <div id="result"></div>
+</form>
+<script> // load nultiply module multiplyModule();
+  multiplyModule();
+
+  function multiplyModule(){
+
+    function mulleplei(){
+      var aap = document.querySelector('input[name="firstNumber"]').value;
+      var hond = document.querySelector('input[name="secondNumber"]').value;
+      document.querySelector('#result').innerHTML = aap * hond;
+    }
+
+      document.querySelector('#multiply').addEventListener("click", mulleplei);
+
+  }
+
+</script>
+
+</body>
+</html>
