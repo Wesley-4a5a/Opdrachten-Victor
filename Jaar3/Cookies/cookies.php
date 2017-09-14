@@ -33,5 +33,6 @@
 <?php
   if(ISSET($_POST['submit'])){
     setcookie('acceptTerms', 'true');
+    header("Refresh:0");
   }
 ?>

@@ -4,6 +4,7 @@ var play = false
 function playPause(){
   if(play === false){
     video.play();
+    Progress();
     play = true;
   }
   else if(play === true){
@@ -32,9 +33,50 @@ function volume(){
   video.currentTime += 25;
 }
 
+function Progress()
+{
 
-document.querySelector('#location').addEventListener("click", chooseLocation);
-function chooseLocation(){
-  alert('start: '+ video.seekable.start(0) + ' end: ' + video.seekable.end(0));
-    video.currentTime=5;
+    var Player = document.querySelector("#video");
+    var Filled = document.querySelector("#progress_filled");
+    var Played = 0;
+    Played = (100 / (Player.duration / Player.currentTime))
+
+    Filled.style.flexBasis = Played + "%";
+
+    if(!video.paused)
+    {
+        setTimeout(Progress, 500);;
+    }
 }
+
+document.querySelector('#location').addEventListener("click", SkipTo);
+function SkipTo()
+{
+    var Player = document.querySelector("#video");
+    var Filled = document.querySelector("#progress_filled");
+
+    var position = window.event.clientX;
+    var Offset = (window.innerWidth - document.getElementById("location").offsetWidth) / 2;
+    var progress = 100 / (window.innerWidth / (position + Offset));
+    Filled.style.flexBasis = progress + "%";
+    Player.currentTime = (Player.duration / 100) * progress;
+
+}
+
+
+var video = document.querySelector("video.viewer");
+video.addEventListener("dblclick",toggleFullScreen);
+
+    var fullscreen = false;
+
+    function toggleFullScreen() {
+        if(fullscreen == false) {
+            var requestFullScreen = video.requestFullscreen || video.msRequestFullscreen || video.mozRequestFullScreen || video.webkitRequestFullscreen;
+            requestFullScreen.call(video);
+            fullscreen = true;
+        } else if (fullscreen == true){
+            var exitFullScreen = video.exitFullscreen || video.msExitFullscreen || video.mozExitFullScreen || video.webkitExitFullscreen;
+            exitFullScreen.call(video);
+            fullscreen = false;
+        }
+    }
