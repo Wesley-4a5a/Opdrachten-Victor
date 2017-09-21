@@ -1,3 +1,18 @@
+
+
+<?php
+session_start();
+?>
+<?php
+if(!ISSET($_SESSION['colour'])){
+  $_SESSION['colour'] = $_POST['colour'];
+}
+else{
+  $_SESSION['colour'];
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,24 +21,45 @@
   </head>
   <body>
     <form method='POST' action=''>
+      <input onchange='setColour()' name='colour' type='color' id='colour' />
       Gewichtig: <input type='number' name='weight' />
       Highte: <input type='number' step='.01' name='height' />
       <input type='submit' name='submit' value='bekeren' />
     </form>
+    <script>
+      document.body.style.backgroundColor = ' <?= $_SESSION['colour'] ?> ';
+    </script>
   </body>
 </html>
-
+<script>
+var colour;
+  function setColour(){
+    var colour = document.querySelector('#colour').value;
+    console.log(colour);
+  }
+</script>
 <?php
+
 $height;
 $weight;
+
 if(ISSET($_POST['submit'])){
   $height = $_POST['height'];
   $weight = $_POST['weight'];
+  $colour = $_POST['colour'];
+  $_SESSION['colour'] = $colour;
   echo 'Uwe BMI is: ' . calculate($height, $weight);
+  ?>
+  <script>
+    document.body.style.backgroundColor = ' <?= $_SESSION['colour'] ?> ';
+  </script>
+  <?php
 }
 function calculate($height, $weight){
   $bmiCalc = $weight/($height*$height);
   return $bmiCalc;
 }
+
+
 
  ?>
