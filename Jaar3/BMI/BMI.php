@@ -42,7 +42,10 @@ var colour;
 
 $height;
 $weight;
-
+$flikkerBMI = array();
+$flikkerBMI2 = array();
+$_SESSION['hond'] = $flikkerBMI;
+$_SESSION['aap'] = $flikkerBMI2;
 if(ISSET($_POST['submit'])){
   $height = $_POST['height'];
   $weight = $_POST['weight'];
@@ -54,12 +57,18 @@ if(ISSET($_POST['submit'])){
     document.body.style.backgroundColor = ' <?= $_SESSION['colour'] ?> ';
   </script>
   <?php
+  array_push($flikkerBMI, $weight, $height, calculate($height, $weight));
+  array_push($flikkerBMI2, $flikkerBMI);
 }
 function calculate($height, $weight){
   $bmiCalc = $weight/($height*$height);
   return $bmiCalc;
 }
 
-
+echo "<table border='1'><tr><th>Geweight</th><th>Heighte</th><th>BMI</th></tr>";
+foreach ($flikkerBMI2 as &$value) {
+    echo "<tr><td>$value[0]</td><td>$value[1]</td><td>$value[2]</td></tr>";
+}
+echo "</table>";
 
  ?>
