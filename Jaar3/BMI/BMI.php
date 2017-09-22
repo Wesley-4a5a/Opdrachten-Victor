@@ -70,5 +70,5 @@ foreach ($flikkerBMI2 as &$value) {
     echo "<tr><td>$value[0]</td><td>$value[1]</td><td>$value[2]</td></tr>";
 }
 echo "</table>";
-
+//JE MOET DIE ARRAY RENAME NAAR DE SESSION ARRAY_PUSH($_SESSION['HOND']) ETC)
  ?>
