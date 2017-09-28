@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>But Harry doesn't mind if he doesn't make the scene. He's got a daytime job he's doing alright.</title>
+</head>
+<body>
+
+<table border=1>
+  <tr>
+    <th>
+      X
+    </th>
+    <th>
+      0
+    </th>
+    <th>
+      1
+    </th>
+    <th>
+      2
+    </th>
+    <th>
+      3
+    </th>
+    <th>
+      Result
+    </th>
+  </tr>
+
+  <script>
+
+      var table = [
+        [9, 21, 14, 7],
+        [11, 5, 27, 15],
+        [29, 17, 6, 24],
+  //      [14, 9, 22, 3],
+      ];
+
+    var countR = 0;
+
+    table.forEach(function(value, index, arr)
+    {
+      console.log(index);
+//      for(var aap = 2; aap<arr.length; aap++){
+        document.write("<tr><td>"+ index +"</td>");
+        document.write("<td>" + arr[index][0] + "</td>");
+        document.write("<td>" + arr[index][1] + "</td>");
+        document.write("<td>" + arr[index][2] + "</td>");
+        document.write("<td>" + arr[index][3] + "</td>");
+        var hond = arr[index][0] + arr[index][1] + arr[index][2] + arr[index][3];
+        document.write("<td>" + hond + "</td></tr>");
+//      }
+
+    })
+
+  </script>
+</table>
+
+<p>
+  Reverse
+</p>
+
+<table border=1>
+  <tr>
+    <th>
+      X
+    </th>
+    <th>
+      0
+    </th>
+    <th>
+      1
+    </th>
+    <th>
+      2
+    </th>
+    <th>
+      3
+    </th>
+    <th>
+      Result
+    </th>
+  </tr>
+
+  <script>
+
+      var table = [
+        [9, 21, 14, 7],
+        [11, 5, 27, 15],
+        [29, 17, 6, 24],
+        [14, 9, 22, 3],
+      ];
+
+    var countR = 0;
+
+    table.forEach(function(value, index, arr)
+    {
+      console.log(index);
+      document.write("<tr><td>"+ index +"</td>");
+      document.write("<td>" + arr[0][index] + "</td>");
+      document.write("<td>" + arr[1][index] + "</td>");
+      document.write("<td>" + arr[2][index] + "</td>");
+      document.write("<td>" + arr[3][index] + "</td>");
+      var hond = arr[0][index] + arr[1][index] + arr[2][index] + arr[3][index];
+      document.write("<td>" + hond + "</td></tr>");
+    })
+
+  </script>
+</table>
+
+
+
+</body>
+</html>
