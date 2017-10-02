@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<a href="http://www.google.nl">Test</a>
+<a href="http://www.willpoulter.com">Haap</a>
+<a href="http://www.psgh.nl">Haik</a>
+<a href="http://www.psgh.com">Paap</a>
+<br />
+<img class='small' src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ4NTc5Njk4Nl5BMl5BanBnXkFtZTgwMjQxNjgyMjE@._V1_UY317_CR12,0,214,317_AL_.jpg" alt="">
+<img class='small' src="http://i.dailymail.co.uk/i/pix/2017/07/21/02/42829A3000000578-4716558-image-a-37_1500599247300.jpg" alt="">
+
+<script type="text/javascript">
+
+    function select(type){
+
+      var hond = document.querySelectorAll(type);
+
+      return function (atrieboet, valjoe) {
+          hond.forEach(function(value, index, arr){
+            hond[index].setAttribute(atrieboet, valjoe);
+          })
+      }
+
+      return setLinksAttr;
+    }
+
+var setLinksAttr = select('a');
+setLinksAttr('target', '_blank');
+
+var flikker = select('.small');
+flikker('width', '200');
+
+</script>
+
+
+  </body>
+</html>
