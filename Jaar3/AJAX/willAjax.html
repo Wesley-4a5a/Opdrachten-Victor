@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      div{
+        position: relative;
+        width: 32%;
+        height: 50vh;
+        border: 2px groove;
+        float:left;
+        text-align:center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='hond1'><button onclick="page('hello', 'hond1')">Click mij gvd</button></div>
+    <div id='hond2'><button onclick="page('poulter', 'hond2')">De tering</button></div>
+    <div id='hond3'><button onclick="page('lorem', 'hond3')">Klik FERDI NU</button></div>
+
+
+    <script>
+    function page(page, select) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+          console.log(this.responseText);
+         document.getElementById(select).innerHTML = this.responseText;
+      };
+      xhttp.open("GET", page+".html", true);
+      xhttp.send();
+    }
+    </script>
+  </body>
+</html>
