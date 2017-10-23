@@ -15,17 +15,22 @@
     </style>
   </head>
   <body>
-    <div id='hond1'><button onclick="page('hello', 'hond1')">Click mij gvd</button></div>
-    <div id='hond2'><button onclick="page('poulter', 'hond2')">De tering</button></div>
-    <div id='hond3'><button onclick="page('lorem', 'hond3')">Klik FERDI NU</button></div>
+    <div id='hond1'><button>Click mij gvd</button></div>
+    <div id='hond2'><button>De tering</button></div>
+    <div id='hond3'><button>Klik FERDI NU</button></div>
 
 
     <script>
+
+    document.querySelector('#hond1').addEventListener("click", function(){page('hello', 'hond1')});                                                                   document.querySelector('#hond1').addEventListener("click", function(){alert('Hello Fryslan!')});
+    document.querySelector('#hond2').addEventListener("click", function(){page('poulter', 'hond2')});
+    document.querySelector('#hond3').addEventListener("click", function(){page('lorem', 'hond3')});
+
     function page(page, select) {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
-          console.log(this.responseText);
          document.getElementById(select).innerHTML = this.responseText;
+         this.alert(this.responseText);
       };
       xhttp.open("GET", page+".html", true);
       xhttp.send();
