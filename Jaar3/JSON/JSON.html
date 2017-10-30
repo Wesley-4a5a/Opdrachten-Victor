@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+          var result = {
+    "employees": [
+        {
+            "id" : 1,
+            "firstname" : "Nico",
+            "lastname" : "Boer"
+        },
+        {
+            "id" : 2,
+            "firstname" : "Tim",
+            "lastname" : "Jansen"
+        },
+        {
+            "id" : 3,
+            "firstname" : "Peter",
+            "lastname" : "Romijn"
+        }
+    ]
+}
+// var hond = JSON.parse(result);
+
+for (var i = 0; i < result.employees.length; i++) {
+  var aap = result.employees[i].hasAids = true;
+}
+
+
+console.log(result.employees);
+    </script>
+
+  </body>
+</html>
+
+
+<!--
+1. Array
+2. result.employees[1].firstname   result.employees[1]['firstname']
+3. result.employees[0].lastname
+4. result.employees[2].id
+5. result.employees[2].firstname = "Poulter"
+6. result.employees[2].permanentContract = true
+7. delete result.employees[1].firstname
+
+
+ -->
