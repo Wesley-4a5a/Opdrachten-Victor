@@ -1,0 +1,58 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+     <meta charset="utf-8">
+     <title></title>
+    <link rel="stylesheet" href="sprite.css">
+
+   </head>
+   <body>
+
+     <span class="megaman-character stand" id='0'></span>
+     <span class="megaman-character run1" id='1'></span>
+     <span class="megaman-character run2" id='2'></span>
+     <span class="megaman-character run3" id='3'></span>
+
+
+    <script type="text/javascript">
+
+    document.querySelector('body').addEventListener('keypress', run);
+    document.querySelector('body').addEventListener('keyup', stand);
+    function stand(){
+              document.getElementById('0').style.visibility = 'visible';
+              document.getElementById('1').style.visibility = 'hidden';
+              document.getElementById('2').style.visibility = 'hidden';
+              document.getElementById('3').style.visibility = 'hidden';
+    }
+       var i = 0;
+     function run(){
+       i++;
+       console.log(i);
+        document.getElementById('0').style.visibility = 'hidden';
+        document.getElementById('1').style.visibility = 'hidden';
+        document.getElementById('2').style.visibility = 'hidden';
+        document.getElementById('3').style.visibility = 'hidden';
+        document.getElementById(i).style.visibility = 'visible';
+        if (i >= 3) {
+          i=0;
+        }
+     }
+
+      var stand = document.querySelector('.stand');
+      var run1 = document.querySelector('.run1');
+      var run2 = document.querySelector('.run2');
+      var run3 = document.querySelector('.run3');
+
+      // for (var i = 0; i < 3; i++) {
+      //  document.getElementById('0').style.visibility = 'hidden';
+      //  document.getElementById('1').style.visibility = 'hidden';
+      //  document.getElementById('2').style.visibility = 'hidden';
+      //  document.getElementById('3').style.visibility = 'hidden';
+      //  document.getElementById(i).style.visibility = 'visible';
+      //   if (false) {
+      //     i=0;
+      //   }
+      // }
+      </script>
+   </body>
+ </html>

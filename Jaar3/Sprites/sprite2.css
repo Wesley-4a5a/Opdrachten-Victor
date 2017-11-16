@@ -1,0 +1,60 @@
+.megaman-character{
+  background-image: url('megamanrun.png');
+  width: 60px;
+  height: 64px;
+  display: inline-block;
+}
+
+.act0{
+
+  background-position: 1% 1%;
+  visibility: visible;
+}
+
+.act1{
+
+  background-position: 43% 1%;
+  visibility: hidden;
+}
+
+.act2{
+
+  background-position: 56% 1%;
+  visibility: hidden;
+}
+
+.act3{
+
+  background-position: 70% 1%;
+  visibility: hidden;
+}
+
+.act4{
+
+  background-position: 43% 1%;
+  visibility: hidden;
+}
+
+.act5{
+
+  background-position: 56% 1%;
+  visibility: hidden;
+}
+
+.act6{
+
+  background-position: 70% 1%;
+  visibility: hidden;
+}
+
+
+#run{
+  position:absolute;
+  left: 50%;
+  top: 0;
+}
+#stand{
+  position:absolute;
+  left: 55%;
+  top: 0;
+}
