@@ -30,8 +30,8 @@
       return '<span class="'.$this->gameName .' ' . $this->action . '" ></span>';
     }
 
-    public function walk(){
-      echo 'Walking.. just pretend he is walking..';
+    public function standStill(){
+      echo 'Standing still like the lazy piece of shit he is';
     }
 
     public function __toString(){
@@ -53,8 +53,8 @@
       echo 'Shooting ';
     }
 
-    public function jump(){
-      echo 'Jumping ';
+    public function walk(){
+      echo 'Walking ';
     }
 
 
@@ -73,7 +73,7 @@
 
     $mega = new megaman('megaman');
     echo $mega->getAction(); ///spanneke
-    $mega->walk();
+    $mega->standStill();
     echo '<br /><hr />';
     $metal = new metalman('megaman');
     echo $metal->getAction(); ///spanneke
@@ -156,7 +156,7 @@
        $run6->shoot();
        $run6->walk();
        echo $run3->getActionName();
-
+       $run5->walk();
        $run5->metalBlade();
  ?>
 
@@ -165,7 +165,7 @@
        console.log('lol');
          setTimeout(Animate, 200);
 
-          Sprite_Index = 0;
+          Sprite_Index = 1;
 
           function Animate()
           {
@@ -173,7 +173,7 @@
             Sprite_Index++;
             if(Sprite_Index >= 7)
             {
-                Sprite_Index = 0;
+                Sprite_Index = 1;
             }
             document.querySelector(".act"+Sprite_Index).style.visibility = 'visible';
 
