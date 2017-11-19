@@ -15,14 +15,30 @@ class Person
     return 'Deze flikker zijn naam is: ' . $this->name . ' en zijn/haar leeftijd is: '.$this->age . '<br />';
   }
 
-  function setAge(){
+  public function setAge($age)
+	{
+		if(($age >= 0 ) && ($age <= 150))
+		{
+			$this->age = $age;
+		}
+	}
 
-  }
+	public function getAge()
+	{
+		return $this->age;
+	}
 
-  function getAge(){
-    
-  }
-
+	public function CheckAge()
+	{
+		if($this->age < 18)
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 
   public function __destruct(){
 
@@ -41,6 +57,7 @@ $bassie = new Person('Bassie', 82);
 
 echo $bassie->showPerson();
 
-
+$tim->setAge(24);
+$bassie->setAge(82);
 
  ?>
