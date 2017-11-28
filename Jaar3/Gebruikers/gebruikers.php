@@ -21,11 +21,11 @@ class user
   }
 
   public function changePassword($newPass){
-      $this->password = password_hash($newPass, PASSWORD_DEFAULT);
+      $this->password = md5($newPass);
   }
 
   public function checkPassword($pass){
-    if($this->password ==  md5($pass)){
+    if($this->password ===  md5($pass)){
       return true;
     }
     else{
