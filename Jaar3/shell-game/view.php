@@ -30,11 +30,11 @@
     <div class="cups">
        <?php
 
-        echo $ball->show();
+        echo $ball;
 
-        echo $cups[1]->show();
-        echo $cups[2]->show();
-        echo $cups[3]->show();
+        echo $cups[1];
+        echo $cups[2];
+        echo $cups[3];
         ?>
 
      </div>
@@ -42,7 +42,8 @@
      <div class="clear"></div>
      </div>
      <?php
-        echo $player->show();
+        echo $player; echo $amount->getAmount();
+
       ?>
 
 <button><a href=?startGame=1>Start Game!</a></button>

@@ -1,6 +1,8 @@
 <?php
 
-class Person
+include 'InformationInterface.php';
+
+class Person implements InformationInterface
 {
 
   public $name;
@@ -11,7 +13,7 @@ class Person
     $this->age = $age;
   }
 
-  function showPerson(){
+  public function showInfo(){
     return 'Deze flikker zijn naam is: ' . $this->name . ' en zijn/haar leeftijd is: '.$this->age . '<br />';
   }
 
@@ -51,11 +53,11 @@ class Person
 
 $tim = new Person('Tim', 21);
 
-echo $tim->showPerson();
+echo $tim->showInfo();
 
 $bassie = new Person('Bassie', 82);
 
-echo $bassie->showPerson();
+echo $bassie->showInfo();
 
 $tim->setAge(24);
 $bassie->setAge(82);

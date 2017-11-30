@@ -4,13 +4,16 @@ session_start();
 include 'class-ball.php';
 include 'class-player.php';
 include 'class-cup.php';
+include 'class-game.php';
 
+//amount
+$amount = new Game(100);
 
 //Instance of a new Ball with setter method.
 $ball = new Ball('blue');
 
 //Instance of a new player
-$player = new Player('Will', 5);
+$player = new HumanPlayer('Will', $_COOKIE['Amount']);
 
 //Instance of a new Cup
 
@@ -26,18 +29,33 @@ if(ISSET($_GET['show_cup'])){
 }
 
 if(ISSET($_GET['startGame'])){
-  $random = rand(1,3);
-  $_SESSION["ball"] = $random;
-  echo 'lol';
+  $amount->start();
 }
 
 if(ISSET($_SESSION["ball"])){
     $cups[$_SESSION["ball"]]->ball = $ball->show();
 }
+if(ISSET($_GET["show_cup"])){
+  if($_SESSION["ball"] == $_GET["show_cup"]){
+  setcookie('Amount', $amount->amountPerGame+=20);
 
-if($_SESSION["ball"] == $_GET["show_cup"]){
-  echo 'FLIKKER';
+  ?>
+ <script>alert('FLIKKER je hebt gewonnen.');</script>
+  <?php
+  $amount->start();
+  $cups[1]->putDown();
+  $cups[1]->show();
+  $cups[2]->putDown();
+  $cups[2]->show();
+  $cups[3]->putDown();
+  $cups[3]->show();
 }
+else{
+  echo 'Too bad';
+
+}
+}
+
 
 include 'view.php';
 

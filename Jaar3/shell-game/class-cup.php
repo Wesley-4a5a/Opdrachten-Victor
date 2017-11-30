@@ -1,8 +1,30 @@
 <?php
 
-class Cup
+interface CupInterface
 {
+  /**
+  * @returns string;
+  */
+  public function show();
 
+  /**
+  * @returns string;
+  */
+  public function liftUp();
+
+  /**
+  * @returns boolean;
+  */
+  public function putDown();
+
+  /**
+  * @returns boolean;
+  */
+  public function __toString();
+}
+
+class Cup implements CupInterface
+{
   public $color = null;
   public $type = null;
   public $positionUp = false;
@@ -34,6 +56,9 @@ class Cup
     $this->positionUp = false;
   }
 
+  public function __toString(){
+    return $this->show();
+  }
 
 }
 
