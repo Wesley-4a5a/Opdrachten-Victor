@@ -40,10 +40,10 @@ class Cup implements CupInterface
 
   public function show(){
     if ($this->positionUp === true) {
-      return "<a href=?show_cup=$this->id class='cup ". $this->color ." liftup'>$this->ball</a>";
+      return "<a href=?show_cup=$this->id class='cup ". $this->color ." liftup'><img src='images/cup.png'>$this->ball</img></a>";
     }
     elseif($this->positionUp === false){
-      return "<a href=?show_cup=$this->id  class='cup ". $this->color ." putdown'>$this->ball</a>";
+      return "<a href=?show_cup=$this->id class='cup ". $this->color ." putdown'><img src='images/cup.png'>$this->ball</img></a>";
     }
 
   }

@@ -30,11 +30,12 @@
     <div class="cups">
        <?php
 
-        echo $ball;
+
 
         echo $cups[1];
         echo $cups[2];
         echo $cups[3];
+
         ?>
 
      </div>

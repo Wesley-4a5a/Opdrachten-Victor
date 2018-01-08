@@ -27,7 +27,7 @@ final class Ball implements BallInterface
 
 
   public function show(){
-    return "<div class='ball ". $this->color ."'></div>";
+    return "<img src='images/ball.png' class='ball ". $this->color ."'></img>";
   }
 
   public function __toString(){
