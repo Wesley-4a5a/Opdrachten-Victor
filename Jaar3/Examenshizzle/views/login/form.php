@@ -5,6 +5,16 @@
 	<input type="text" name="email" id="email"><br>
   Password:<br>
 	<input type="text" name="password" id="password"><br>
+	<?php
+	if(ISSET($_GET['login'])){
+		if($_GET['login'] === 'wrong'){
+			echo '<div style="color: red">
+			Email of password onjuist kerel.
+			</div>';
+		}
+	}
+
+	 ?>
 	<hr>
-	<input type="submit" value="login">
+	<input type="submit" value="Login">
 </form>

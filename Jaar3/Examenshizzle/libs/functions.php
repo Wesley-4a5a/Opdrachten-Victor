@@ -40,5 +40,14 @@ function internalRedirect($controller, $action)
 	die;
 }
 
+function loginCheck()
+{
+	if(ISSET($_SESSION['login'])){
+		return true;
+	}
+	else{
+		internalRedirect('login', 'overview');
+	}
+}
 
 ?>

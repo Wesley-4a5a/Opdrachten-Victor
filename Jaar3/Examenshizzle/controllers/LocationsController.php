@@ -6,7 +6,8 @@ class LocationsController
 
 	public function overview()
 	{
-		$this->showOverview();
+			loginCheck();
+			$this->showOverview();
 	}
 
 	public function delete()
@@ -33,6 +34,7 @@ class LocationsController
 
 	public function addForm()
 	{
+		loginCheck();
 		loadView('theme/header');
 		loadView('locations/form');
 		loadView('theme/footer');
@@ -53,6 +55,7 @@ class LocationsController
 
 	public function updateForm()
 	{
+		loginCheck();
 		loadView('theme/header');
 		loadView('locations/formUpdate');
 		loadView('theme/footer');

@@ -5,7 +5,8 @@ class LoginController
 {
 	public function overview()
 	{
-		$this->showLogin();
+			// loginCheck();
+			$this->showLogin();
 	}
 
 	private function showlogin()
@@ -33,15 +34,23 @@ class LoginController
 		foreach($result as $row){
 			$passwordVerify = password_verify($password, $row['password']);
 			if($email == $row['email'] && $passwordVerify){
-				echo 'correct kerel';
+				$_SESSION['login'] = true;
+				$_SESSION['email'] = $email;
+				internalRedirect('pages', 'home&login=correct');
 			}
 			else{
-				echo 'onjuist kerel';
+				internalRedirect('login', 'overview&login=wrong');
 			}
 		}
 
 	}
 
+	public function logout()
+	{
+		session_unset();
+		session_destroy();
+		redirect(APP_BASE_URL);
+	}
 
 }
 

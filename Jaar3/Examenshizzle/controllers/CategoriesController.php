@@ -33,6 +33,7 @@ class CategoriesController
 
 	public function addForm()
 	{
+		loginCheck();
 		loadView('theme/header');
 		loadView('product_categories/form');
 		loadView('theme/footer');
@@ -53,6 +54,7 @@ class CategoriesController
 
 	public function updateForm()
 	{
+		loginCheck();
 		loadView('theme/header');
 		loadView('product_categories/formUpdate');
 		loadView('theme/footer');

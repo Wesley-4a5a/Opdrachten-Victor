@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // initialization
 // f.e. DB connection, session, config, language files
 define('APP_PATH', __DIR__);
@@ -18,8 +18,8 @@ $action = filter_input(INPUT_GET, 'action' , FILTER_SANITIZE_URL);
 
 if(($controller === NULL) || ($action === NULL))
 {
-	$controller = 'pages';
-	$action = 'home';
+	$controller = 'login';
+	$action = 'overview';
 }
 
 $className = ucfirst($controller) . 'Controller';
