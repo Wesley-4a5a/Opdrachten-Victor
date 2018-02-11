@@ -1,4 +1,4 @@
-<h1>home<h1>
+<h1>    <?php echo $language->getLang('home') ?><h1>
   <div>
-    Lekkere kroketten
+    <?php echo $language->getLang('home_intro_text') ?>
   </div>

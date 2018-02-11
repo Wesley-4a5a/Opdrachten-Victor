@@ -1,22 +1,27 @@
 <?php
+//Security tegen direct access
+if(defined('APP_PATH') === false){
+	die();
+}
+//of in kort
+defined('APP_PATH') || die();
 
-class PagesController
+
+class PagesController extends AppControllerAbstract
 {
 	public function home()
 	{
-		loginCheck();
-		loadView('theme/header');
-		loadView('pages/home');
-		loadView('theme/footer');
+		// loginCheck();
+		$this->loadCompleteView('pages/home');
+
 	}
 
 
 	public function about()
 	{
-		loginCheck();
-		loadView('theme/header');
-		loadView('pages/about', [ 'name' => 'Kroket']);
-		loadView('theme/footer');
+		// loginCheck();
+		$this->loadCompleteView('pages/about', [ 'name' => 'Kroket']);
+
 	}
 
 }

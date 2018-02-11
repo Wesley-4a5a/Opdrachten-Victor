@@ -12,16 +12,16 @@
     <title>Shooooot</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo APP_BASE_URL ?>/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo APP_BASE_URL ?>/assets/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="assets/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo APP_BASE_URL ?>/assets/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo APP_BASE_URL ?>/assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -117,19 +117,19 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.php?controller=pages&action=home"><i class="fa fa-home fa-fw"></i> Home</a>
+                            <a href="<?php echo APP_BASE_URL ?>/pages/home"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="index.php?controller=pages&action=about"><i class="fa fa-wheelchair-alt fa-fw"></i> About</a>
+                            <a href="<?php echo APP_BASE_URL ?>/pages/about"><i class="fa fa-wheelchair-alt fa-fw"></i> About</a>
                         </li>
 						<li>
-                            <a href="index.php?controller=locations&action=overview"><i class="fa fa-frown-o fa-fw"></i> Locations</a>
+                            <a href="<?php echo APP_BASE_URL ?>/locations/overview"><i class="fa fa-frown-o fa-fw"></i> Locations</a>
                         </li>
                         <li>
-                              <a href="index.php?controller=categories&action=overview"><i class="fa fa-hand-lizard-o fa-fw"></i> Categories</a>
+                              <a href="<?php echo APP_BASE_URL ?>/categories/overview"><i class="fa fa-hand-lizard-o fa-fw"></i> Categories</a>
                         </li>
                         <li>
-                              <a href="index.php?controller=categories&action=overview"><i class="fa fa-motorcycle fa-fw"></i> Check die motor</a>
+                              <a href="<?php echo APP_BASE_URL ?>/categories/overview"><i class="fa fa-motorcycle fa-fw"></i> Check die motor</a>
                         </li>
                     </ul>
                 </div>

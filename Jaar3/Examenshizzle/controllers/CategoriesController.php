@@ -1,7 +1,13 @@
 <?php
+//Security tegen direct access
+if(defined('APP_PATH') === false){
+	die();
+}
+//of in kort
+defined('APP_PATH') || die();
 
 
-class CategoriesController
+class CategoriesController extends AppControllerAbstract
 {
 
 	public function overview()
@@ -34,9 +40,7 @@ class CategoriesController
 	public function addForm()
 	{
 		loginCheck();
-		loadView('theme/header');
-		loadView('product_categories/form');
-		loadView('theme/footer');
+		$this->loadCompleteView('product_categories/form');
 	}
 
 	public function addLocation()
@@ -55,9 +59,7 @@ class CategoriesController
 	public function updateForm()
 	{
 		loginCheck();
-		loadView('theme/header');
-		loadView('product_categories/formUpdate');
-		loadView('theme/footer');
+		$this->loadCompleteView('product_categories/formUpdate');
 	}
 
 	public function updateCategory()

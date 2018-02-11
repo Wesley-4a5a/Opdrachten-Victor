@@ -1,7 +1,13 @@
 <?php
+//Security tegen direct access
+if(defined('APP_PATH') === false){
+	die();
+}
+//of in kort
+defined('APP_PATH') || die();
 
 
-class LocationsController
+class LocationsController extends AppControllerAbstract
 {
 
 	public function overview()
@@ -27,17 +33,14 @@ class LocationsController
 		require_once(APP_PATH . '/models/LocationsModel.php');
 		$LocationsModel = new LocationsModel();
 		$locations = $LocationsModel->getAll();
-		loadView('theme/header');
-		loadView('locations/overview', [ 'locations' => $locations]);
-		loadView('theme/footer');
+		$this->loadCompleteView('locations/overview', [ 'location' => $locations]);
+
 	}
 
 	public function addForm()
 	{
 		loginCheck();
-		loadView('theme/header');
-		loadView('locations/form');
-		loadView('theme/footer');
+				$this->loadCompleteView('locations/form');
 	}
 
 	public function addLocation()
@@ -56,9 +59,7 @@ class LocationsController
 	public function updateForm()
 	{
 		loginCheck();
-		loadView('theme/header');
-		loadView('locations/formUpdate');
-		loadView('theme/footer');
+		$this->loadCompleteView('locations/formUpdate');
 	}
 
 	public function updateLocation()

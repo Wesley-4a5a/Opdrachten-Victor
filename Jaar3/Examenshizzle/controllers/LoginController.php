@@ -1,7 +1,13 @@
 <?php
+//Security tegen direct access
+if(defined('APP_PATH') === false){
+	die();
+}
+//of in kort
+defined('APP_PATH') || die();
 
 
-class LoginController
+class LoginController extends AppControllerAbstract
 {
 	public function overview()
 	{
@@ -11,9 +17,7 @@ class LoginController
 
 	private function showlogin()
 	{
-		loadView('theme/header');
-		loadView('login/form');
-		loadView('theme/footer');
+				$this->loadCompleteView('login/form');
 	}
 
 	public function login()

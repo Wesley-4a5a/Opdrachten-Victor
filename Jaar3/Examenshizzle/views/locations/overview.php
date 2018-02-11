@@ -16,7 +16,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<?php foreach ($locations as $row): ?>
+		<?php foreach ($location as $row): ?>
 		<tr>
 			<td><?php echo $row->id ?></td>
 			<td><?php echo $row->location ?></td>
