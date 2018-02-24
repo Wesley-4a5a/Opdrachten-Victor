@@ -1,31 +1,12 @@
 <?php
 
-class ProductsModel
+class VoorraadModel
 {
 
 	public function getAll()
 	{
 		$conn  = getDbConnection();
-		$stmt = $conn->prepare("SELECT * FROM Product INNER JOIN fabriek ON product.fabriek_id = fabriek.fabriek_id");
-		$stmt->execute();
-		$arr = $stmt->fetchAll(PDO::FETCH_OBJ);
-		return $arr;
-	}
-
-
-	public function getOne($id)
-	{
-		$conn  = getDbConnection();
-		$stmt = $conn->prepare("SELECT * FROM Product INNER JOIN fabriek ON product.fabriek_id = fabriek.fabriek_id WHERE product.product_id = $id");
-		$stmt->execute();
-		$arr = $stmt->fetchAll(PDO::FETCH_OBJ);
-		return $arr;
-	}
-
-	public function getVoorraad($id)
-	{
-		$conn  = getDbConnection();
-		$stmt = $conn->prepare("SELECT * FROM opslag_product INNER JOIN opslag ON opslag.opslag_id = opslag_product.opslag_id INNER JOIN product ON product.product_id = opslag_product.product_id WHERE product.product_id = $id");
+		$stmt = $conn->prepare("SELECT *, opslag_product.voorraad AS OPvoorraad FROM ((opslag_product INNER JOIN product ON product.product_id = opslag_product.product_id) INNER JOIN opslag ON opslag.opslag_id = opslag_product.opslag_id)");
 		$stmt->execute();
 		$arr = $stmt->fetchAll(PDO::FETCH_OBJ);
 		return $arr;

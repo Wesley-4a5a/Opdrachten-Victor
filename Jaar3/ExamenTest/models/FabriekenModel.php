@@ -15,7 +15,7 @@ class FabriekenModel
 	public function delete($id)
 	{
 		$conn  = getDbConnection();
-		$stmt = $conn->prepare("DELETE FROM fabriek WHERE id=:id");
+		$stmt = $conn->prepare("DELETE FROM fabriek WHERE fabriek_id=:id");
 		$stmt->bindParam(':id', $id);
 		$stmt->execute();
 		$affectedRows = $stmt->rowCount();
@@ -35,7 +35,7 @@ class FabriekenModel
 	public function update($id, $fabriek)
 	{
 		$conn  = getDbConnection();
-		$stmt = $conn->prepare("UPDATE fabriek SET naam = :naam WHERE id=:id");
+		$stmt = $conn->prepare("UPDATE fabriek SET naam = :naam WHERE fabriek_id=:id");
 		$stmt->bindParam(':id', $id);
 		$stmt->bindParam(':naam', $fabriek);
 		$stmt->execute();

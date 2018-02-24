@@ -113,12 +113,15 @@
                         <li>
                             <a href="index.php?controller=pages&action=about"><i class="fa fa-info fa-fw"></i> About</a>
                         </li>
-						<li>
+						            <li>
                             <a href="index.php?controller=products&action=overview"><i class="fa  fa-fw"></i> Products</a>
                         </li>
                         <li>
-                                        <a href="index.php?controller=fabrieken&action=overview"><i class="fa  fa-fw"></i> Fabrieken</a>
+                            <a href="index.php?controller=fabrieken&action=overview"><i class="fa  fa-fw"></i> Fabrieken</a>
                       </li>
+                      <li>
+                          <a href="index.php?controller=voorraad&action=overview"><i class="fa  fa-fw"></i> Voorraad</a>
+                    </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

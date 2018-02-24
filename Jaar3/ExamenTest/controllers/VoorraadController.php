@@ -1,18 +1,19 @@
 <?php
 
-class ProductsController{
+class VoorraadController{
 
-  private $ProductModel;
+  private $VoorraadModel;
 
   public function __construct(){
-    require_once(APP_PATH . '/models/ProductsModel.php');
-    $this->ProductsModel = new ProductsModel();
+    require_once(APP_PATH . '/models/VoorraadModel.php');
+    $this->VoorraadModel = new VoorraadModel();
   }
 
 public function overview(){
-  $product = $this->ProductsModel->getAll();
+
+  $voorraad = $this->VoorraadModel->getAll();
   loadView('theme/header');
-  loadView('products/overview', ['product' => $product]);
+  loadView('voorraad/overview', ['voorraad' => $voorraad]);
   loadView('theme/footer');
 }
 
@@ -22,7 +23,7 @@ public function addForm(){
   $FabriekenModel = new FabriekenModel;
   $fabriek = $FabriekenModel->getAll();
   loadView('theme/header');
-  loadView('products/addForm', ['fabriek' => $fabriek]);
+  loadView('voorraad/addForm', ['fabriek' => $fabriek]);
   loadView('theme/footer');
 }
 
@@ -33,15 +34,6 @@ public function addProduct(){
   $fabriek = $_POST['fabriek'];
   $this->ProductsModel->addProduct($product, $voorraad, $prijs, $fabriek);
   internalRedirect('products', 'overview');
-}
-
-public function productDetails(){
-  $id = $_GET['id'];
-  $product = $this->ProductsModel->getOne($id);
-  $voorraad = $this->ProductsModel->getVoorraad($id);
-  loadView('theme/header');
-  loadView('details/details', ['product' => $product, 'voorraad' => $voorraad]);
-  loadView('theme/footer');
 }
 
 public function update(){

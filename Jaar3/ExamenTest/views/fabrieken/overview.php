@@ -18,10 +18,10 @@
 	<tbody>
 		<?php foreach ($fabriek as $row): ?>
 		<tr>
-			<td><?php echo $row->id ?></td>
+			<td><?php echo $row->fabriek_id ?></td>
 			<td><?php echo $row->naam ?></td>
-			<td><a href='index.php?controller=fabrieken&action=update&id=<?php echo $row->id ?>&name=<?php echo $row->naam?>'>Verander mij!</a></td>
-			<td><a href='index.php?controller=fabrieken&action=delete&id=<?php echo $row->id ?>'>Hang mij!</a></td>
+			<td><a href='index.php?controller=fabrieken&action=update&id=<?php echo $row->fabriek_id ?>&name=<?php echo $row->naam?>'>Verander mij!</a></td>
+			<td><a href='index.php?controller=fabrieken&action=delete&id=<?php echo $row->fabriek_id ?>'>Hang mij!</a></td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>

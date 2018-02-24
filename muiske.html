@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>aap</title>
-
-    <style>
-
+<head>
+<meta charset="utf-8">
+<title>aap</title>
+<style>
       body{
-        background-color: black;
+       background-color: black;
       }
 
-      #telling{
+     #telling{
         border-radius: 50px;
-        background-color: black;
-        color: white;
-        width: 10vw;
-        font-size: 5em;
+       background-color: black;
+       color: white;
+       width: 10vw;
+    font-size: 5em;
         text-align: center;
-      }
-    </style>
+     }
+   </style>
 
-  </head>
+</head>
   <body>
 
 <div id='telling'></div>
 
-
-  <script>
+ <script>
 
     var time = 0;
 
-    var timertje = setInterval(function(){
-    if(time<=100){
-    document.getElementById('telling').innerHTML = time;
-    time++
+ var timertje = setInterval(function(){
+  if(time<=100){
+  document.getElementById('telling').innerHTML = time;
+  time++
     }
     else{
       clearInterval(timertje);
@@ -43,5 +40,6 @@
 
   </script>
 
-  </body>
+ </body>
 </html>
+
